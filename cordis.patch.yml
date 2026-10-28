@@ -1,0 +1,14 @@
+# dsh-pnpm-manager bundle patch.
+#
+# Inserts one host row into the profile roster. The row's Config (see
+# lib/index.js) is rendered by DSH as the plugin's settings form; editing it
+# rewrites the user-level ~/.npmrc proxy / registry lines.
+- insert:
+    - id: dsh-pnpm-manager
+      name: dsh-pnpm-manager
+      config:
+        mode: auto
+        proxyUrl: http://127.0.0.1:7897
+        noProxy: ""
+        strictSsl: true
+        registry: keep

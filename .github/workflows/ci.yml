@@ -1,0 +1,22 @@
+name: ci
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Syntax check
+        run: |
+          node --check lib/index.js
+          node --check lib/npmrc.js
+          node --check bin/dsh-pnpm-manager.mjs
+      - name: Test
+        run: node --test test/npmrc.test.mjs test/plugin.test.mjs test/routes.test.mjs
