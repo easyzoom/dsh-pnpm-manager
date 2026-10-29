@@ -62,6 +62,10 @@
     "type": "git",
     "url": "https://github.com/easyzoom/dsh-pnpm-manager.git"
   },
+  "homepage": "https://github.com/easyzoom/dsh-pnpm-manager#readme",
+  "bugs": {
+    "url": "https://github.com/easyzoom/dsh-pnpm-manager/issues"
+  },
   "scripts": {
     "cli": "node bin/dsh-pnpm-manager.mjs",
     "test": "node --test test/npmrc.test.mjs test/plugin.test.mjs test/routes.test.mjs",

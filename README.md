@@ -8,11 +8,11 @@
 
 # dsh-pnpm-manager
 
-![dsh-pnpm-manager banner](docs/images/banner.svg)
+![dsh-pnpm-manager banner](https://raw.githubusercontent.com/easyzoom/dsh-pnpm-manager/main/docs/images/banner.svg)
 
 Control whether the **pnpm** used by **DeepSeek Harness (DSH)** goes through a proxy — and inspect / switch its registry and store — from either DSH's settings page or a standalone CLI.
 
-![pnpm 代理 settings card](docs/images/pnpm-proxy-card.png)
+![pnpm 代理 settings card](https://raw.githubusercontent.com/easyzoom/dsh-pnpm-manager/main/docs/images/pnpm-proxy-card.png)
 
 ## Install
 
