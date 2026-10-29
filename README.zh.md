@@ -28,7 +28,7 @@ Node 和 pnpm **不会自动使用 Windows 系统代理**，所以 pnpm 会直�
 
 ### 客户端卡片（可选）
 
-`lib/client.js` 在**插件页**（`plugins.bundle.config` / family 席位）和**「设置 → 内置插件」标签页**（`settings.plugins.tab`）两处注册同一张卡片——模式开关、实时状态、**测试**按钮。注册做了防御：等席位声明后才注册，席位不可用时只是不显示，绝不拖垮 Web 启动。
+`lib/client.js` 在**插件页**（`plugins.bundle.config` / family 席位）和**「设置 → 内置插件」标签页**（`settings.plugins.tab`）两处注册同一张**可编辑表单**——代理模式、代理地址、registry、绕过代理主机、严格 TLS——带**保存二次确认**（编辑 → 保存 → 确认保存）和**测试连接**按钮。注册做了防御：等席位声明后才注册，席位不可用时只是不显示，绝不拖垮 Web 启动。
 
 ## CLI
 

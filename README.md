@@ -28,7 +28,7 @@ Editing the form rewrites `~/.npmrc` immediately (the loader re-applies the row)
 
 ### Client card (optional)
 
-`lib/client.js` registers a richer card — mode switch, live status, and a **Test** button — into both the plugin's page (`plugins.bundle.config` / family seat) and a **Settings → Built-in plugins** tab (`settings.plugins.tab`). Registration is guarded and waits for the seat to be declared, so an unavailable seat never breaks the Web boot.
+`lib/client.js` registers an editable form — mode, proxy URL, registry, no-proxy hosts, and strict-TLS — with a **save confirmation** (edit → 保存 → 确认保存) and a **测试连接** button, into both the plugin's page (`plugins.bundle.config` / family seat) and a **Settings → Built-in plugins** tab (`settings.plugins.tab`). Registration is guarded and waits for the seat to be declared, so an unavailable seat never breaks the Web boot.
 
 ## CLI
 

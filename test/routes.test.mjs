@@ -70,9 +70,9 @@ test("host routes: status / mode / test", { skip }, async (t) => {
       },
     };
     await mod.apply(ctx, { mode: "on", proxyUrl: "http://127.0.0.1:9999", registry: "keep" });
-    assert.equal(routes.length, 3, "three routes registered");
+    assert.equal(routes.length, 4, "four routes registered");
     const route = (suffix) => routes.find((r) => r.path.endsWith(suffix));
-    assert.ok(route("/status") && route("/mode") && route("/test"));
+    assert.ok(route("/status") && route("/mode") && route("/config") && route("/test"));
 
     const status = await callRoute(route("/status"), "GET");
     assert.equal(status.status, 200);
@@ -93,6 +93,21 @@ test("host routes: status / mode / test", { skip }, async (t) => {
     assert.equal(probe.status, 200);
     assert.equal(typeof probe.body.ok, "boolean");
     assert.equal(typeof probe.body.via, "string");
+
+    const configured = await callRoute(route("/config"), "POST", {
+      mode: "on",
+      proxyUrl: "http://127.0.0.1:9999",
+      registry: "npmmirror",
+      noProxy: "localhost",
+      strictSsl: false,
+    });
+    assert.equal(configured.status, 200);
+    assert.equal(configured.body.ok, true);
+    assert.equal(configured.body.proxy, true);
+    const after = fs.readFileSync(path.join(dir, ".npmrc"), "utf8");
+    assert.match(after, /registry=https:\/\/registry\.npmmirror\.com\//);
+    assert.match(after, /noproxy=localhost/);
+    assert.match(after, /strict-ssl=false/);
   } finally {
     process.env.USERPROFILE = old;
   }
