@@ -24,11 +24,11 @@ Only the `proxy`, `https-proxy` and `registry` lines of `~/.npmrc`. Every other 
 
 Editing the form rewrites `~/.npmrc` immediately (the loader re-applies the row).
 
-> **Status:** verified in a live DSH web profile (isolated): the host routes return live data, and the client card renders on the plugin page showing the mode status plus **开 / 关 / 自动 / 测试** controls. The host routes are also unit-tested.
+> **Status:** verified in live DSH (isolated web profile **and** the desktop app): the host routes return live data; the card renders on the plugin's page **and** as a **pnpm 代理** tab under **Settings → Built-in plugins**, showing the mode status plus **开 / 关 / 自动 / 测试**. Host routes are also unit-tested.
 
 ### Client card (optional)
 
-`lib/client.js` registers a richer card — mode switch, live status, and a **Test** button — under the `plugins.bundle.config` seat, calling the host routes above. Registration is guarded so an unavailable seat never breaks the Web boot.
+`lib/client.js` registers a richer card — mode switch, live status, and a **Test** button — into both the plugin's page (`plugins.bundle.config` / family seat) and a **Settings → Built-in plugins** tab (`settings.plugins.tab`). Registration is guarded and waits for the seat to be declared, so an unavailable seat never breaks the Web boot.
 
 ## CLI
 
