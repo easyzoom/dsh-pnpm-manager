@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="260" viewBox="0 0 1000 260" role="img" aria-label="dsh-pnpm-manager — proxy and registry switch for DeepSeek Harness">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#0b1220"/>
+    </linearGradient>
+    <linearGradient id="acc" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#34d399"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <style>
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+      .sans { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+      .title { fill: #f8fafc; font-weight: 700; }
+      .sub { fill: #94a3b8; }
+      .chipbg { fill: #111c2e; stroke: #24314a; stroke-width: 1; }
+      .chiptx { fill: #cbd5e1; }
+      .node { fill: #132033; stroke: #2b3a55; stroke-width: 2; }
+      .glyph { stroke: #7c8aa5; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .cap { fill: #64748b; }
+      .flow { stroke: url(#acc); stroke-width: 3; fill: none; stroke-dasharray: 9 11; animation: dash 1.1s linear infinite; }
+      .flow2 { stroke: url(#acc); stroke-width: 3; fill: none; stroke-dasharray: 9 11; animation: dash 1.5s linear infinite; }
+      .dot { fill: #34d399; }
+      .live { animation: pulse 1.6s ease-in-out infinite; }
+      @keyframes dash { to { stroke-dashoffset: -20; } }
+      @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+    </style>
+  </defs>
+
+  <rect x="1" y="1" width="998" height="258" rx="20" fill="url(#bg)" stroke="#1e293b"/>
+
+  <!-- illustration: pnpm -> proxy(toggle) -> registry -->
+  <g>
+    <rect x="48" y="102" width="54" height="54" rx="12" class="node"/>
+    <rect x="60" y="114" width="30" height="20" rx="3" class="glyph"/>
+    <line x1="67" y1="144" x2="83" y2="144" class="glyph"/>
+
+    <circle cx="176" cy="129" r="34" fill="#0e1a2b" stroke="url(#acc)" stroke-width="3"/>
+    <rect x="156" y="121" width="40" height="16" rx="8" fill="#0b1220" stroke="#475569" stroke-width="1.5"/>
+    <circle cx="188" cy="129" r="6" class="dot live"/>
+
+    <rect x="250" y="102" width="54" height="54" rx="12" class="node"/>
+    <ellipse cx="277" cy="117" rx="15" ry="5" class="glyph"/>
+    <line x1="262" y1="117" x2="262" y2="141" class="glyph"/>
+    <line x1="292" y1="117" x2="292" y2="141" class="glyph"/>
+    <path d="M262 141 A15 5 0 0 0 292 141" class="glyph"/>
+
+    <path d="M104 129 H140" class="flow"/>
+    <path d="M212 129 H248" class="flow2"/>
+
+    <text x="75" y="182" text-anchor="middle" class="mono cap" font-size="11">pnpm</text>
+    <text x="176" y="182" text-anchor="middle" class="mono cap" font-size="11">proxy</text>
+    <text x="277" y="182" text-anchor="middle" class="mono cap" font-size="11">registry</text>
+  </g>
+
+  <!-- text -->
+  <text x="352" y="116" class="mono title" font-size="46">dsh-pnpm-manager</text>
+  <text x="352" y="152" class="sans sub" font-size="20">Proxy &amp; registry switch for DeepSeek Harness&#8217;s pnpm</text>
+
+  <!-- chips -->
+  <g class="sans" font-size="14">
+    <g transform="translate(352,184)">
+      <rect width="118" height="30" rx="15" class="chipbg"/>
+      <text x="16" y="20" class="chiptx">host + client</text>
+    </g>
+    <g transform="translate(482,184)">
+      <rect width="150" height="30" rx="15" class="chipbg"/>
+      <text x="16" y="20" class="chiptx">Settings tab</text>
+    </g>
+    <g transform="translate(644,184)">
+      <rect width="176" height="30" rx="15" class="chipbg"/>
+      <text x="16" y="20" class="chiptx">git &#183; npm &#183; local</text>
+    </g>
+  </g>
+</svg>

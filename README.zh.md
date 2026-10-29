@@ -1,5 +1,7 @@
 # dsh-pnpm-manager
 
+![dsh-pnpm-manager 横幅](docs/images/banner.svg)
+
 控制 **DeepSeek Harness（DSH）** 使用的 **pnpm** 是否走代理，并查看 / 切换它的 registry 和 store。既可以在 DSH 的设置页里点开关，也可以用一个独立 CLI。
 
 ![pnpm 代理 设置卡片](docs/images/pnpm-proxy-card.png)
