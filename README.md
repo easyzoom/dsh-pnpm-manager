@@ -1,6 +1,6 @@
 [English](README.md) | [简体中文](README.zh.md)
 
-[![npm](https://img.shields.io/badge/npm-unpublished-lightgrey?logo=npm&logoColor=white)](#install)
+[![npm](https://img.shields.io/npm/v/dsh-pnpm-manager?logo=npm&logoColor=white)](https://www.npmjs.com/package/dsh-pnpm-manager)
 [![pnpm](https://img.shields.io/badge/pnpm-11-F69220?logo=pnpm&logoColor=white)](https://pnpm.io/)
 [![DeepSeek Harness](https://img.shields.io/badge/DeepSeek%20Harness-plugin-536DFE)](https://github.com/deepseek-ai/deepseek-harness)
 [![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
