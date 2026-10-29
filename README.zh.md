@@ -24,7 +24,7 @@ Node 和 pnpm **不会自动使用 Windows 系统代理**，所以 pnpm 会直�
 
 在表单里改完会立即重写 `~/.npmrc`（loader 会重新 apply 该行）。
 
-> **状态说明：** host 部分已在隔离 DSH profile 中验证（模块可加载、`Config` schema 有效）。可选的客户端卡片（`lib/client.js`）按 DSH 的 `__ModuleLoader__` 打包格式手写，其 host 路由（`/dsh-pnpm-manager/status|mode|test`）已有单测；卡片的**渲染**仍需手动开浏览器确认。
+> **状态说明：** 已在隔离的真实 DSH web profile 中验证：host 路由返回实时数据，客户端卡片在插件页正常渲染（显示代理状态 + 开/关/自动/测试 按钮）。host 路由并有单测覆盖。
 
 ### 客户端卡片（可选）
 

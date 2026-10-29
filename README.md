@@ -24,7 +24,7 @@ Only the `proxy`, `https-proxy` and `registry` lines of `~/.npmrc`. Every other 
 
 Editing the form rewrites `~/.npmrc` immediately (the loader re-applies the row).
 
-> **Status:** the host half is verified in an isolated DSH profile (module loads, `Config` schema valid). The optional client card (`lib/client.js`) is written in DSH's `__ModuleLoader__` bundle format and its host routes (`/dsh-pnpm-manager/status|mode|test`) are unit-tested; the card's **rendering** still needs a manual browser check.
+> **Status:** verified in a live DSH web profile (isolated): the host routes return live data, and the client card renders on the plugin page showing the mode status plus **开 / 关 / 自动 / 测试** controls. The host routes are also unit-tested.
 
 ### Client card (optional)
 
