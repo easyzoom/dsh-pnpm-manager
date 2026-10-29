@@ -2,6 +2,28 @@
 
 控制 **DeepSeek Harness（DSH）** 使用的 **pnpm** 是否走代理，并查看 / 切换它的 registry 和 store。既可以在 DSH 的设置页里点开关，也可以用一个独立 CLI。
 
+![pnpm 代理 设置卡片](docs/images/pnpm-proxy-card.png)
+
+## 安装
+
+用 dsh 自带的 `dsh` CLI。把 `<profile>` 换成你的 profile 名（桌面端是 `desktop`，`dsh web` 是 `web`，……）。
+
+```bash
+# 1) git 源（主通道）
+dsh plugin --profile <profile> add "github:easyzoom/dsh-pnpm-manager#main"
+
+# 2) npm（发布到 npm 后）
+dsh plugin --profile <profile> add dsh-pnpm-manager
+
+# 3) 本地开发（本仓库的检出目录）
+dsh plugin --profile <profile> add /path/to/dsh-pnpm-manager
+```
+
+说明：
+- **桌面 profile 被运行中的应用独占**——用 CLI 安装前请先关闭 DeepSeek Harness，或在应用内的插件面板安装。
+- git 源在配好 git 凭据时对私有仓库也有效；仓库公开后无需认证。
+- npm 方式需要先把包发布到 npm（`npm publish`）。
+
 ## 为什么需要
 
 Node 和 pnpm **不会自动使用 Windows 系统代理**，所以 pnpm 会直连 `registry.npmjs.org` 和 GitHub。在有防火墙的环境里这会很慢，甚至报 `ECONNRESET`。让 pnpm 走本机代理（例如 Clash 的 `127.0.0.1:7897`）能把依赖解析加快数倍——但代理关掉时安装会失败。这个工具就是把这个开关变成一键（或一条命令）。

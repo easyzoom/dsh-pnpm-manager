@@ -2,6 +2,28 @@
 
 Control whether the **pnpm** used by **DeepSeek Harness (DSH)** goes through a proxy — and inspect / switch its registry and store — from either DSH's settings page or a standalone CLI.
 
+![pnpm 代理 settings card](docs/images/pnpm-proxy-card.png)
+
+## Install
+
+Use the bundled `dsh` CLI. Replace `<profile>` with your profile name (`desktop` for the app, `web` for `dsh web`, …).
+
+```bash
+# 1) git source (main channel)
+dsh plugin --profile <profile> add "github:easyzoom/dsh-pnpm-manager#main"
+
+# 2) npm (once published to npm)
+dsh plugin --profile <profile> add dsh-pnpm-manager
+
+# 3) local dev (a checkout of this repo)
+dsh plugin --profile <profile> add /path/to/dsh-pnpm-manager
+```
+
+Notes:
+- The **desktop profile is locked by the running app** — close DeepSeek Harness before a CLI install, or install from the app's Plugins panel.
+- The git source works for a private repo too when your git credentials are set; a public repo needs no auth.
+- The npm command requires the package to be published (`npm publish`) first.
+
 ## Why
 
 Node and pnpm do **not** use the Windows system proxy, so pnpm connects to `registry.npmjs.org` and GitHub directly. Behind a firewall that is slow or fails with `ECONNRESET`. Pointing pnpm at a local proxy (e.g. Clash on `127.0.0.1:7897`) makes dependency resolution several times faster — but if the proxy is down, installs fail. This tool makes that switch one click (or one command) away.
