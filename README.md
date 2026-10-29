@@ -1,3 +1,11 @@
+[English](README.md) | [简体中文](README.zh.md)
+
+[![npm](https://img.shields.io/badge/npm-unpublished-lightgrey?logo=npm&logoColor=white)](#install)
+[![pnpm](https://img.shields.io/badge/pnpm-11-F69220?logo=pnpm&logoColor=white)](https://pnpm.io/)
+[![DeepSeek Harness](https://img.shields.io/badge/DeepSeek%20Harness-plugin-536DFE)](https://github.com/deepseek-ai/deepseek-harness)
+[![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![CI](https://github.com/easyzoom/dsh-pnpm-manager/actions/workflows/ci.yml/badge.svg)](https://github.com/easyzoom/dsh-pnpm-manager/actions/workflows/ci.yml)
+
 # dsh-pnpm-manager
 
 ![dsh-pnpm-manager banner](docs/images/banner.svg)
